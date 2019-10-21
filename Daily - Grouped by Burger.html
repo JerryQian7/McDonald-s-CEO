@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="https://code.highcharts.com/modules/data.js"></script>
+    <script src="https://code.highcharts.com/modules/exporting.js"></script>
+    <script src="https://code.highcharts.com/modules/export-data.js"></script>
+</head>
+<body>
+    <div id="container" style="min-width: 310px; height: 600px; margin: 0 auto"></div>
+
+    <script>
+    Highcharts.chart('container', {
+    chart: {
+        type: 'bar'
+    },
+    title: {
+        text: 'January Burger Sales by Day of Week'
+    },
+    subtitle: {
+        text: ''
+    },
+    xAxis: {
+        categories: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+        title: {
+            text: null
+        }
+    },
+    yAxis: {
+        min: 0,
+        title: {
+            text: 'Sales (USD)',
+            align: 'high'
+        },
+        labels: {
+            overflow: 'justify'
+        }
+    },
+    tooltip: {
+        valueSuffix: ' Dollars'
+    },
+    plotOptions: {
+        bar: {
+            dataLabels: {
+                enabled: true
+            }
+        }
+    },
+    legend: {
+        layout: 'vertical',
+        align: 'right',
+        verticalAlign: 'top',
+        x: -40,
+        y: 80,
+        floating: true,
+        borderWidth: 1,
+        backgroundColor:
+            Highcharts.defaultOptions.legend.backgroundColor || '#FFFFFF',
+        shadow: true
+    },
+    credits: {
+        enabled: false
+    },
+    series: [{
+        name: 'Day of Week',
+        data: [1212655, 1200093, 1215838, 1214919, 1552935, 1471667, 1482872]
+    }]
+});
+    </script>
+</body>
+</html>
+
